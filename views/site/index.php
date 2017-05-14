@@ -44,12 +44,9 @@ $this->title = 'My Yii Application';
             <div class="jumbotron">
               <h1>2017 Collection</h1>
               <p>Spring Fashion</p>
-              <p><a class="btn btn-primary btn-lg" href="<?php //echo \Yii::$app->request->BaseUrl?>/project2.zip" role="button">Download Application</a></p>
-              <p><a class="btn btn-primary btn-lg" href="<?// echo \Yii::$app->request->BaseUrl?>/project2.sql" role="button">Download SQL</a></p>
+              <p><a class="btn btn-primary btn-lg" href="https://github.com/akhan118/Coding-Crash-Course" role="button">Download Application</a></p>
               <p>Last Updated May 13th 2017 </p>
-
             </div>
-
             <p class="text-center"><a href="url">View All</a></p>
 
 
