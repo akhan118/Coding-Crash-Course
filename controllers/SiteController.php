@@ -11,6 +11,8 @@ use app\models\ContactForm;
 use app\models\SignupForm;
 use app\models\PasswordResetRequestForm;
 use app\models\ResetPasswordForm;
+use app\models\Catalog;
+
 
 
 class SiteController extends Controller
@@ -84,6 +86,35 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
+
+    public function actionTest()
+    {
+
+      if(YII::$app->request->get())
+      {
+          $model = new Catalog();
+
+        $term =YII::$app->request->get('search');
+
+          $searchResults = Catalog::find()->where(['name'=>$term])->all();
+
+
+        //  var_dump($model);
+
+        return $this->render('searchResults', [
+            'results' => $searchResults,
+        ]);
+
+    //  var_dump($term);
+
+      }
+    }
+
+
+
+
+
 
     /**
      * Login action.
@@ -195,5 +226,5 @@ class SiteController extends Controller
         ]);
     }
 
-    
+
 }
