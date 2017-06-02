@@ -12,10 +12,6 @@ use app\models\SignupForm;
 use app\models\PasswordResetRequestForm;
 use app\models\ResetPasswordForm;
 use app\models\Catalog;
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 
 class SiteController extends Controller
@@ -90,7 +86,6 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-<<<<<<< Updated upstream
 
     public function actionTest()
     {
@@ -110,43 +105,9 @@ class SiteController extends Controller
             'results' => $searchResults,
         ]);
 
-    //  var_dump($term);
-=======
-    // just print the word test (test communication between veiw and controller)
-
-    public function actionTest()
-    {
-      if(YII::$app->request->get())
-      {
-        //if request is get then write out test
-        //var_dump($_GET);
-        // $ is for creating a variable that captures what we are searching
-
-        $term = YII::$app->request->get('search');
-        $searchResults = Catalog::find()->where(['name' => $term])->all();
-
-        return $this->render('searchResults', [
-          'results' => $searchResults,
-        ]);
-        //var_dump($term);
-
-        //return $this->render('searchResults', [
-        //  'term' => $term,
-        //]);
-
->>>>>>> Stashed changes
-
       }
     }
 
-
-<<<<<<< Updated upstream
-
-
-
-
-=======
->>>>>>> Stashed changes
     /**
      * Login action.
      *

@@ -19,15 +19,9 @@ $this->title = 'My Yii Application';
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6">
-<<<<<<< Updated upstream
             <form  role="search" method="get" action="<?php echo Url::to(['site/test']) ?>" >
             <div class="col-md-10">
-=======
 
-            <form role ="search" method="get" action="<?php echo Url::to(['site/test']) ?>">
-            <div class="col-md-10">
-
->>>>>>> Stashed changes
               <input type="text" class="form-control" id="exampleInputAmount" name="search" placeholder="Search Catalog">
             </div>
             <div class="col-md-2">

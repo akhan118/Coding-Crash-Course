@@ -7,23 +7,7 @@ use yii\helpers\Html;
 $this->title = 'Results';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<<<<<<< Updated upstream
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-
-
-
-<p><? if ($results){
-
-foreach ($results as $obj)
-{
-  echo $obj->price;
-    echo $obj->image;
-}
-
-} ?></p>
-=======
 
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
@@ -41,6 +25,5 @@ foreach ($results as $obj)
   }
 } ?>
 </p>
->>>>>>> Stashed changes
 
 </div>
