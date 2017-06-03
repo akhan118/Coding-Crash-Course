@@ -1,7 +1,12 @@
 <?php
 use yii\helpers\Url;
-
+// instead of typting link it will create a link for you
 /* @var $this yii\web\View */
+/* action to what url to send it to is what action does php echo url (finds root
+ url) this is good for consitency when testing locally and live
+ go to a controller called site and find a method called test
+*/
+// dont use get for passwords bc it appears in url
 
 $this->title = 'My Yii Application';
 ?>
@@ -16,6 +21,7 @@ $this->title = 'My Yii Application';
           <div class="col-md-6">
             <form  role="search" method="get" action="<?php echo Url::to(['site/test']) ?>" >
             <div class="col-md-10">
+
               <input type="text" class="form-control" id="exampleInputAmount" name="search" placeholder="Search Catalog">
             </div>
             <div class="col-md-2">
