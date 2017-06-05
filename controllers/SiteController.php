@@ -14,7 +14,6 @@ use app\models\ResetPasswordForm;
 use app\models\Catalog;
 
 
-
 class SiteController extends Controller
 {
     /**
@@ -106,15 +105,8 @@ class SiteController extends Controller
             'results' => $searchResults,
         ]);
 
-    //  var_dump($term);
-
       }
     }
-
-
-
-
-
 
     /**
      * Login action.
