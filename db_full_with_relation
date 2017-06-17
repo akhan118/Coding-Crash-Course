@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 17, 2017 at 07:35 PM
+-- Generation Time: Jun 17, 2017 at 10:23 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.0.15
 
@@ -13,25 +13,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `project2`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `catalog`
---
-
-CREATE TABLE `catalog` (
-  `id` int(5) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` text,
-  `price` decimal(6,0) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `qty` int(10) NOT NULL,
-  `category` varchar(255) NOT NULL,
-  `onhand` int(10) DEFAULT NULL,
-  `size` varchar(255) DEFAULT NULL,
-  `color` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -114,6 +95,18 @@ CREATE TABLE `productcategories` (
   `CategoryName` varchar(50) COLLATE latin1_german2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german2_ci;
 
+--
+-- Dumping data for table `productcategories`
+--
+
+INSERT INTO `productcategories` (`CategoryID`, `CategoryName`) VALUES
+(1, 'Running'),
+(2, 'Walking'),
+(3, 'HIking'),
+(4, 'Track and Trail'),
+(5, 'Short Sleave'),
+(6, 'Long Sleave');
+
 -- --------------------------------------------------------
 
 --
@@ -156,17 +149,12 @@ CREATE TABLE `products` (
   `productcategories_CategoryID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_german2_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `size`
+-- Dumping data for table `products`
 --
 
-CREATE TABLE `size` (
-  `id` int(11) NOT NULL,
-  `catalog_id` int(11) NOT NULL,
-  `size` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `products` (`ProductID`, `ProductSKU`, `ProductName`, `ProductPrice`, `ProductWeight`, `ProductCartDesc`, `ProductShortDesc`, `ProductLongDesc`, `ProductThumb`, `ProductImage`, `ProductCategoryID`, `ProductUpdateDate`, `ProductStock`, `ProductLive`, `ProductUnlimited`, `ProductLocation`, `productcategories_CategoryID`) VALUES
+(991, '4453434543', 'asdfsd', 453, 345, 'dsfad', 'asdfsda', 'adsfdsa', 'asdfasdf', 'asdfasdfds', 5, '2017-06-17 20:18:55', NULL, NULL, NULL, '', 1);
 
 -- --------------------------------------------------------
 
@@ -187,14 +175,15 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `user`
 --
 
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
+(3, 'akhan118', 'ilJ4qReVESyVLwj47OcqX1XQ2vRxYPDK', '$2y$13$60r3ulS62KqX4K01KjQa8eJ5dW/GfeuVWBCQday9pxhBeEbaWnn0.', NULL, 'akhan118@hotmail.com', 10, 1497724147, 1497724147);
+
 --
--- Indexes for table `catalog`
+-- Indexes for dumped tables
 --
-ALTER TABLE `catalog`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `optiongroups`
@@ -246,13 +235,6 @@ ALTER TABLE `products`
   ADD KEY `fk_products_productcategories1_idx` (`productcategories_CategoryID`);
 
 --
--- Indexes for table `size`
---
-ALTER TABLE `size`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `size` (`size`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -265,11 +247,6 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `catalog`
---
-ALTER TABLE `catalog`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `optiongroups`
 --
@@ -304,17 +281,12 @@ ALTER TABLE `productoptions`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=991;
---
--- AUTO_INCREMENT for table `size`
---
-ALTER TABLE `size`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ProductID` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=992;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
