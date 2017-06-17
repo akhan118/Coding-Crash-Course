@@ -11,7 +11,7 @@ use app\models\ContactForm;
 use app\models\SignupForm;
 use app\models\PasswordResetRequestForm;
 use app\models\ResetPasswordForm;
-use app\models\Catalog;
+use app\models\Products;
 
 
 class SiteController extends Controller
@@ -92,18 +92,18 @@ class SiteController extends Controller
 
       if(YII::$app->request->get())
       {
-          $model = new Catalog();
+        //  $model = new Product();
 
         $term =YII::$app->request->get('search');
 
-          $searchResults = Catalog::find()->where(['name'=>$term])->all();
+          $searchResults = Products::find()->where(['ProductName'=>$term])->all();
 
 
-        //  var_dump($model);
+        var_dump($searchResults);
 
-        return $this->render('searchResults', [
-            'results' => $searchResults,
-        ]);
+        // return $this->render('searchResults', [
+        //     'results' => $searchResults,
+        // ]);
 
       }
     }

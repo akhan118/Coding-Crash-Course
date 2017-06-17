@@ -103,8 +103,8 @@ class Products extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProductcategoriesCategory()
-    {
-        return $this->hasOne(Productcategories::className(), ['CategoryID' => 'productcategories_CategoryID']);
-    }
+    // public function getProductcategoriesCategory()
+    // {
+    //     return $this->hasOne(Productcategories::className(), ['CategoryID' => 'productcategories_CategoryID']);
+    // }
 }
