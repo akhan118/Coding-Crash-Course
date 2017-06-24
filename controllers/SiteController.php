@@ -102,6 +102,8 @@ class SiteController extends Controller
     ->where(['like', 'productName', $term])
     ->all();
 
+          
+          
 
 
         var_dump($rows);
