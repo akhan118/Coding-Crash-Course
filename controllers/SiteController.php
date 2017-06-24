@@ -96,6 +96,8 @@ class SiteController extends Controller
 
         $term =YII::$app->request->get('search');
 
+        var_dump($term);
+
           $searchResults = Products::find()->where(['ProductName'=>$term])->all();
 
 
