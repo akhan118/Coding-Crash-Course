@@ -113,13 +113,14 @@ class SiteController extends Controller
         //
         // var_dump($searchResults);
 
+// this is a test comment CV
         // return $this->render('searchResults', [
         //     'results' => $searchResults,
         // ]);
 
       }
     }
-
+// 
     /**
      * Login action.
      *
