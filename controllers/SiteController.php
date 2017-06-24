@@ -86,10 +86,9 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-
+// cleaned lines 90 through 119
     public function actionTest()
     {
-
       if(YII::$app->request->get())
       {
         //  $model = new Product();
@@ -101,11 +100,7 @@ class SiteController extends Controller
     ->from('products')
     ->where(['like', 'productName', $term])
     ->all();
-
-          
-          
-
-
+  
         var_dump($rows);
         // 
         //   $searchResults = Products::find()->where(['ProductName'=>$term])->all();
@@ -116,7 +111,6 @@ class SiteController extends Controller
         // return $this->render('searchResults', [
         //     'results' => $searchResults,
         // ]);
-
       }
     }
 
@@ -139,7 +133,6 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-
     /**
      * Logout action.
      *
@@ -148,10 +141,8 @@ class SiteController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
     }
-
     /**
      * Displays contact page.
      *
