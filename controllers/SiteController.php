@@ -96,10 +96,20 @@ class SiteController extends Controller
 
         $term =YII::$app->request->get('search');
 
-          $searchResults = Products::find()->where(['ProductName'=>$term])->all();
+        $rows = (new \yii\db\Query())
+    ->select('*')
+    ->from('products')
+    ->where(['like', 'productName', $term])
+    ->all();
 
 
-        var_dump($searchResults);
+
+        var_dump($rows);
+        // 
+        //   $searchResults = Products::find()->where(['ProductName'=>$term])->all();
+        //
+        //
+        // var_dump($searchResults);
 
         // return $this->render('searchResults', [
         //     'results' => $searchResults,
