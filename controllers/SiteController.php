@@ -108,7 +108,7 @@ class SiteController extends Controller
 
       }
     }
-
+// 
     /**
      * Login action.
      *
