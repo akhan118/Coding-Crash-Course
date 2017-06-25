@@ -2,7 +2,7 @@ Coding Crash Course
 ============================
 
 
- [CodingCrashCourse.com](http://codingcrashcourse.com/) application 
+ Application live [demo](http://codingcrashcourse.com/). 
 
 DIRECTORY STRUCTURE
 -------------------
