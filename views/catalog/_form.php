@@ -7,6 +7,7 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\Catalog */
 /* @var $form yii\widgets\ActiveForm */
 ?>
+//
 
 <div class="catalog-form">
 
