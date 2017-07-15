@@ -100,9 +100,9 @@ class SiteController extends Controller
     ->from('products')
     ->where(['like', 'productName', $term])
     ->all();
-  
+
         var_dump($rows);
-        // 
+        //
         //   $searchResults = Products::find()->where(['ProductName'=>$term])->all();
         //
         //
@@ -114,7 +114,7 @@ class SiteController extends Controller
         // ]);
       }
     }
-// 
+//
     /**
      * Login action.
      *
@@ -221,6 +221,12 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+
+    public function actionStorefront(){
+
+    return $this->render('storefront');
+  }
 
 
 }
