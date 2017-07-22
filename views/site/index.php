@@ -22,7 +22,7 @@ $this->title = 'My Yii Application';
             <form  role="search" method="get" action="<?php echo Url::to(['site/test']) ?>" >
             <div class="col-md-10">
 
-              <input type="text" class="form-control" id="exampleInputAmount" name="search" placeholder="Search Catalog">
+              <input type="text" class="form-control" id="exampleInputAmount" name="searchBox" placeholder="Search Catalog">
             </div>
             <div class="col-md-2">
                     <button type="submit" class="btn btn-primary">Search</button>
