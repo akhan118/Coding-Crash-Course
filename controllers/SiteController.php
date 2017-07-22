@@ -93,7 +93,7 @@ class SiteController extends Controller
       {
         //  $model = new Product();
 
-        $term =YII::$app->request->get('search');
+        $term =YII::$app->request->get('searchBox');
 
         $rows = (new \yii\db\Query())
     ->select('*')
@@ -101,17 +101,9 @@ class SiteController extends Controller
     ->where(['like', 'productName', $term])
     ->all();
 
-        var_dump($rows);
-        //
-        //   $searchResults = Products::find()->where(['ProductName'=>$term])->all();
-        //
-        //
-        // var_dump($searchResults);
-
-// this is a test comment CV
-        // return $this->render('searchResults', [
-        //     'results' => $searchResults,
-        // ]);
+        return $this->render('searchResults', [
+            'results' => $rows,
+        ]);
       }
     }
 //
