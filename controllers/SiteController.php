@@ -215,4 +215,10 @@ class SiteController extends Controller
     }
 
 
+    public function actionStorefront(){
+
+    return $this->render('storefront');
+  }
+
+
 }
