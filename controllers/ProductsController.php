@@ -142,7 +142,7 @@ class ProductsController extends Controller
     /**
      * Finds the Products using findModel based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * when the model is found, it will send it to productView.Php under
+     * when the model is found, it will sent it to productView.Php under
      * views/products/
      * @param integer $id
      * @return Products the loaded model
