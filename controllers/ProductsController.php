@@ -135,4 +135,33 @@ class ProductsController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
+
+
+    /**
+     * Finds the Products using findModel based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * when the model is found, it will sent it to productView.Php under
+     * views/products/
+     * @param integer $id
+     * @return Products the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+
+     /*
+
+       "Follow the White Rabbit" -Alice in Wonderland
+     */
+
+    public function actionProduct($id){
+          $product=$this->findModel($id);
+          return $this->render('productView', [
+              'results' => $product,
+          ]);
+
+
+          //var_dump($product);
+  }
+
 }
