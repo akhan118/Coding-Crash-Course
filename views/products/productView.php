@@ -15,41 +15,51 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <?
-
-/*
-
-  "Follow the White Rabbit" -Alice in Wonderland
-*/
-
 if ($results) {
-
-  echo $results["ProductName"];
-
-echo '<pre>';
-  var_dump($results);
-  echo '</pre>';
-}
-/*
-
-  "Follow the White Rabbit" -Alice in Wonderland
-*/
-
-
 ?>
 
-
-
 <div class="row" id="result" >
-    <div class="col-md-4" >
 
+<div class="col-md-6 text-center">
+      <div class="thumbnail">
+          <img src="<? echo $results["ProductThumb"];?>" >
+      </div>
+</div>
+
+<div class="col-md-6">
+
+    <div class="row" id="result-description" >
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <h3> <? echo $results["ProductName"]; ?>  </h3>
+        <br>
+        <h4> <?  echo 'Price: $'  ; echo $results["ProductPrice"]; ?>  </h4>
+        <br>
+        <h4> Product Description </h4>
+        <p>  <? echo $results["ProductLongDesc"]; ?>  </p>
+      </div>
+      <div class="col-md-2">
+      </div>
     </div>
 
-  </a>
+    <div class="row" id="purchase-button-row" >
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-8">
+        <button  class="btn btn-primary btn-block">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          Add To Cart
+        </button>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+
   </div>
+</div>
 
-  <br><br>
-
-
+<? } ?>
 
 
 </div>
