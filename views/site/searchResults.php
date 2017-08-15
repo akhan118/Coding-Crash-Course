@@ -32,15 +32,16 @@ if ($results) {
 
 
 
-    
 
-    <div class="col-md-4" >
-      <img class="img-responsive" src="<? echo $results[$i]["ProductThumb"];?>" style="width:256px;height:256px; border: 1px solid grey;">
 
+    <div class="col-md-4">
+          <div class="thumbnail">
+              <img src="<? echo $results[$i]["ProductThumb"];?>" >
+          </div>
     </div>
     <!-- ProductID -->
 
-    <div class="col-md-8 ">
+    <div class="col-md-8">
       <h4> <? echo 'Product Name: ' ; echo $results[$i]["ProductName"]; ?>  </h4>
       <p>  <?  echo 'Product Price: ' ; echo $results[$i]["ProductPrice"]; ?>  </p>
       <p>  <?  echo 'Product Desc: ' ; echo $results[$i]["ProductCartDesc"]; ?>  </p>
