@@ -27,6 +27,8 @@ if ($results) {
 
     <!-- "Follow the White Rabbit" -Alice in Wonderland -->
   <a href=<?php echo Url::to(['products/product/'.$results[$i]["ProductID"]]) ?>>
+      <!-- using php to echo the Url to indexing into an array.  Last week the class
+basically, were at a point of having an array of results.  After typing in a search box we got these structures.  But we want to gey the structure out of there.  Created a for loop in ine 21 to count how many results you got and loop over it.  Once we know that we will esserntially start writing out HTML and CSS. We will write this out for every result in our structure.  -->
     <!-- "Follow the White Rabbit" -Alice in Wonderland -->
 
 
