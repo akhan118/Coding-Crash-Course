@@ -101,7 +101,8 @@ class SiteController extends Controller
     ->where(['like', 'productName', $term])
     ->all();
   
-        var_dump($rows);
+       
+        //var_dump($rows);
         // 
         //   $searchResults = Products::find()->where(['ProductName'=>$term])->all();
         //
@@ -109,9 +110,9 @@ class SiteController extends Controller
         // var_dump($searchResults);
 
 // this is a test comment CV
-        // return $this->render('searchResults', [
-        //     'results' => $searchResults,
-        // ]);
+         return $this->render('searchResults', [
+             'results' => $rows,
+        ]);
       }
     }
 // 
