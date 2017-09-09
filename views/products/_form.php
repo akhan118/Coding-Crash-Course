@@ -30,7 +30,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ProductImage')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'ProductCategoryID')->textInput() ?>
 
     <?= $form->field($model, 'ProductUpdateDate')->textInput() ?>
 

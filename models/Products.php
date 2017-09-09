@@ -17,7 +17,6 @@ use Yii;
  * @property string $ProductLongDesc
  * @property string $ProductThumb
  * @property string $ProductImage
- * @property integer $ProductCategoryID
  * @property string $ProductUpdateDate
  * @property double $ProductStock
  * @property integer $ProductLive
@@ -48,8 +47,8 @@ class Products extends \yii\db\ActiveRecord
             [['ProductSKU', 'ProductName', 'ProductPrice', 'ProductWeight', 'ProductCartDesc', 'ProductShortDesc', 'ProductLongDesc', 'ProductThumb', 'ProductImage', 'productcategories_CategoryID'], 'required'],
             [['ProductPrice', 'ProductWeight', 'ProductStock'], 'number'],
             [['ProductLongDesc'], 'string'],
-            [['ProductCategoryID', 'ProductLive', 'ProductUnlimited', 'productcategories_CategoryID'], 'integer'],
             [['ProductUpdateDate'], 'safe'],
+            [['ProductLive', 'ProductUnlimited', 'productcategories_CategoryID'], 'integer'],
             [['ProductSKU'], 'string', 'max' => 50],
             [['ProductName', 'ProductThumb', 'ProductImage'], 'string', 'max' => 100],
             [['ProductCartDesc', 'ProductLocation'], 'string', 'max' => 250],
@@ -74,7 +73,6 @@ class Products extends \yii\db\ActiveRecord
             'ProductLongDesc' => 'Product Long Desc',
             'ProductThumb' => 'Product Thumb',
             'ProductImage' => 'Product Image',
-            'ProductCategoryID' => 'Product Category ID',
             'ProductUpdateDate' => 'Product Update Date',
             'ProductStock' => 'Product Stock',
             'ProductLive' => 'Product Live',
@@ -83,8 +81,6 @@ class Products extends \yii\db\ActiveRecord
             'productcategories_CategoryID' => 'Productcategories  Category ID',
         ];
     }
-
-    
 
     /**
      * @return \yii\db\ActiveQuery
@@ -105,8 +101,8 @@ class Products extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    // public function getProductcategoriesCategory()
-    // {
-    //     return $this->hasOne(Productcategories::className(), ['CategoryID' => 'productcategories_CategoryID']);
-    // }
+    public function getProductcategoriesCategory()
+    {
+        return $this->hasOne(Productcategories::className(), ['CategoryID' => 'productcategories_CategoryID']);
+    }
 }
