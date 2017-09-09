@@ -6,6 +6,8 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Productcategories;
 
 $this->title = 'Product';
 $this->params['breadcrumbs'][] = $this->title;
@@ -21,7 +23,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'productname')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'productcategory')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'productcategory')->dropDownList(
+            ArrayHelper::map(Productcategories::find()->asArray()->all(), 'CategoryID', 'CategoryName')
+          ); ?>
 
 
                 <div class="form-group">
