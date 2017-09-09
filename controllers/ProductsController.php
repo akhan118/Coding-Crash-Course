@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Products;
+use app\models\CreateProductForm;
+
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -69,6 +71,35 @@ class ProductsController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+
+
+        /**
+         * Creates a new Products model.
+         * If creation is successful, the browser will be redirected to the 'view' page.
+         * @return mixed
+         */
+        public function actionCreateproduct()
+        {
+           $model = new CreateProductForm();
+
+              return $this->render('createProduct', [
+                  'model' => $model,
+              ]);
+
+
+            // $model = new Products();
+            //
+            // if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            //     return $this->redirect(['view', 'id' => $model->ProductID]);
+            // } else {
+            //     return $this->render('create', [
+            //         'model' => $model,
+            //     ]);
+            // }
+        }
+
+
+
 
     /**
      * Creates a new Products model.

@@ -59,6 +59,17 @@ basically, were at a point of having an array of results.  After typing in a sea
 <?
   }
 }
+else
+{
+
+ ?>
+
+<p> No Products matches your search term </p>
+
+
+ <? 
+ 
+}
  ?>
 
 </div>
