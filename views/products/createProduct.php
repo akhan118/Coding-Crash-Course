@@ -24,7 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'productname')->textInput(['autofocus' => true]) ?>
 
                 <?= $form->field($model, 'productcategory')->dropDownList(
-            ArrayHelper::map(Productcategories::find()->asArray()->all(), 'CategoryID', 'CategoryName')
+            ArrayHelper::map(Productcategories::find()->asArray()->all(), 'CategoryID', 'CategoryName'),
+            ['prompt'=>'Select A Category']
           ); ?>
 
 
