@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'product-form']); ?>
+            <?php $form = ActiveForm::begin(['action' =>['products/saveproduct'],'id' => 'product-form']); ?>
 
                 <?= $form->field($model, 'productname')->textInput(['autofocus' => true]) ?>
 
