@@ -154,7 +154,7 @@ class ProductsController extends Controller
        "Follow the White Rabbit" -Alice in Wonderland
      */
 
-    public function actionProduct($id){
+    public function actionProduct($id){ //
           $product=$this->findModel($id);
           return $this->render('productView', [
               'results' => $product,
