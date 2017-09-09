@@ -81,6 +81,8 @@ class ProductsController extends Controller
         public function actionCreateproduct()
         {
            $model = new CreateProductForm();
+           //$model->CreateProduct();
+
 
               return $this->render('createProduct', [
                   'model' => $model,
@@ -98,6 +100,22 @@ class ProductsController extends Controller
             // }
         }
 
+
+
+        public function actionSaveproduct()
+        {
+          die('saved');
+
+            // $model = new Products();
+            //
+            // if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            //     return $this->redirect(['view', 'id' => $model->ProductID]);
+            // } else {
+            //     return $this->render('create', [
+            //         'model' => $model,
+            //     ]);
+            // }
+        }
 
 
 
