@@ -13,8 +13,8 @@ use yii\base\Model;
  */
 class CreateProductForm extends Model
 {
-    public $productname;
-    public $productcategory;
+    public $ProductName;
+    public $productcategories_CategoryID;
 
 
 
@@ -25,7 +25,7 @@ class CreateProductForm extends Model
     {
         return [
             // username and password are both required
-            [['productname', 'productcategory'], 'required'],
+            [['ProductName', 'productcategories_CategoryID'], 'required'],
 
         ];
     }
@@ -51,8 +51,8 @@ class CreateProductForm extends Model
         public function attributeLabels()
         {
             return [
-                'productname' => 'Product Name',
-                'productcategory' => 'Product Category',
+              'ProductName' => 'Product Name',
+                'productcategories_CategoryID' => 'Product Category',
 
             ];
         }
