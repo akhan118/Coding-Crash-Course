@@ -108,25 +108,15 @@ class ProductsController extends Controller
             //   $model->ProductName = 'monkey shirt';
             //   $model->productcategories_CategoryID = 1;
             //   $model->save();
-            //
-            // // $model = new Products();
-            // //
 
-
-            // populate model attributes with user inputs
-$model->load(Yii::$app->request->post());
-// which is equivalent to the following:
-// $model->attributes = \Yii::$app->request->post('ContactForm');
-
-if ($model->validate()) {
-  var_dump(Yii::$app->request->post());
-  var_dump('here');
+$model->attributes = Yii::$app->request->post('CreateProductForm');
+if ($model->validate()&& $model->save()) {
+     return $this->redirect(['view', 'id' => $model->ProductID]);
 
     // all inputs are valid
 } else {
     // validation failed: $errors is an array containing error messages
     var_dump(Yii::$app->request->post());
-
     $errors = $model->errors;
     var_dump($errors);
 
