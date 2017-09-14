@@ -44,7 +44,8 @@ class Products extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ProductSKU', 'ProductName', 'ProductPrice', 'ProductWeight', 'ProductCartDesc', 'ProductShortDesc', 'ProductLongDesc', 'ProductThumb', 'ProductImage', 'productcategories_CategoryID'], 'required'],
+           [[ 'ProductName', 'productcategories_CategoryID'], 'required'],
+            // [['ProductSKU', 'ProductName', 'ProductPrice', 'ProductWeight', 'ProductCartDesc', 'ProductShortDesc', 'ProductLongDesc', 'ProductThumb', 'ProductImage', 'productcategories_CategoryID'], 'required'],
             [['ProductPrice', 'ProductWeight', 'ProductStock'], 'number'],
             [['ProductLongDesc'], 'string'],
             [['ProductUpdateDate'], 'safe'],

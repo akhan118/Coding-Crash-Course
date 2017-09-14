@@ -21,9 +21,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['action' =>['products/saveproduct'],'id' => 'product-form']); ?>
 
-                <?= $form->field($model, 'productname')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'ProductName')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'productcategory')->dropDownList(
+                <?= $form->field($model, 'productcategories_CategoryID')->dropDownList(
             ArrayHelper::map(Productcategories::find()->asArray()->all(), 'CategoryID', 'CategoryName'),
             ['prompt'=>'Select A Category']
           ); ?>

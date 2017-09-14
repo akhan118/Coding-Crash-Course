@@ -104,17 +104,37 @@ class ProductsController extends Controller
 
         public function actionSaveproduct()
         {
-          die('saved');
+          $model = new Products();
+            //   $model->ProductName = 'monkey shirt';
+            //   $model->productcategories_CategoryID = 1;
+            //   $model->save();
 
-            // $model = new Products();
-            //
+$model->attributes = Yii::$app->request->post('CreateProductForm');
+if ($model->validate()&& $model->save()) {
+     return $this->redirect(['view', 'id' => $model->ProductID]);
+
+    // all inputs are valid
+} else {
+    // validation failed: $errors is an array containing error messages
+    var_dump(Yii::$app->request->post());
+    $errors = $model->errors;
+    var_dump($errors);
+
+}
+
+
             // if ($model->load(Yii::$app->request->post()) && $model->save()) {
             //     return $this->redirect(['view', 'id' => $model->ProductID]);
             // } else {
-            //     return $this->render('create', [
-            //         'model' => $model,
-            //     ]);
-            // }
+            //   $errors = $model->errors;
+            //
+            //   var_dump($errors);
+            //   var_dump($model->save());
+
+                // return $this->render('create', [
+                //     'model' => $model,
+                // ]);
+            //}
         }
 
 
