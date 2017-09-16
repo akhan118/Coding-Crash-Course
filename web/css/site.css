@@ -15,7 +15,11 @@ body {
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+    padding: 0px 15px 20px;
+}
+
+.search-row {
+  padding-bottom: 20px;
 }
 
 .footer {
