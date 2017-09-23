@@ -14,30 +14,30 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><? Html::encode($this->title) ?></h1>
 
 <?
-<<<<<<< HEAD
+
 /**/
     //results holds all the info you just clicked on.  A question migbt be how do I use it...
     //here;s how to use it...
     //
-if ($results) {
+/*     if ($results) {
 
   echo $results["ProductName"];
 
     //the below tags make it into a presentation...adds styling.  Saying just dump everything into the resulat
-    //array.  
+    //array.
 echo '<pre>';
   var_dump($results);
   echo '</pre>';
-}
+}*/
 /*
 
   "Follow the White Rabbit" -Alice in Wonderland
 */
 
 
-=======
+
 if ($results) {
->>>>>>> origin/master
+
 ?>
 
 <div class="row" id="result" >
