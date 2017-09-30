@@ -7,6 +7,8 @@ $this->title = 'Store Front new';
 
 ?>
 
+//Second Commit Attempt on the Command Line!
+
 <div class="row search-row">
   <div class="col-md-7"></div>
   <div class="col-md-5">
