@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = 'Store Front';
+$this->title = 'Store Front new';
 
 ?>
 
