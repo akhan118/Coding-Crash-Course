@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'ProductLongDesc:ntext',
             'ProductThumb',
             'ProductImage',
-            'ProductCategoryID',
+            // 'ProductCategoryID',
             'ProductUpdateDate',
             'ProductStock',
             'ProductLive',

@@ -3,11 +3,9 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = 'Store Front new';
+$this->title = 'Store Front';
 
 ?>
-
-//Second Commit Attempt on the Command Line!
 
 <div class="row search-row">
   <div class="col-md-7"></div>

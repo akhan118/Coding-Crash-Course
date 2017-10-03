@@ -3,9 +3,7 @@ body {
     height: 100%;
 }
 
-.pretty_row{
-  margin-top: 100px;
-}
+
 
 .wrap {
     min-height: 100%;
@@ -15,7 +13,11 @@ body {
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+    padding: 0px 15px 20px;
+}
+
+.search-row {
+  padding-bottom: 20px;
 }
 
 .footer {
