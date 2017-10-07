@@ -1,67 +1,95 @@
 <?php
+
+use yii\helpers\Html;
 use yii\helpers\Url;
-// instead of typting link it will create a link for you
-/* @var $this yii\web\View */
-/* action to what url to send it to is what action does php echo url (finds root
- url) this is good for consitency when testing locally and live
- go to a controller called site and find a method called test
-*/
-// dont use get for passwords bc it appears in url
 
-$this->title = 'My Yii Application';
+$this->title = 'Store Front new';
+
 ?>
-<div class="site-index">
+
+//Second Commit Attempt on the Command Line!
+
+<div class="row search-row">
+  <div class="col-md-7"></div>
+  <div class="col-md-5">
+    <form  role="search" method="get" action="<?php echo Url::to(['site/test']) ?>" >
+    <div class="col-md-10">
+
+      <input type="text" class="form-control" id="exampleInputAmount" name="searchBox" placeholder="Search Catalog">
+    </div>
+    <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Search</button>
+     </div>
+   </form>
+  </div>
+</div>
 
 
-    <div class="body-content">
-      <div class="row"></div>
+<div class="row" >
 
-        <div class="row">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
-            <form  role="search" method="get" action="<?php echo Url::to(['site/test']) ?>" >
-            <div class="col-md-10">
-
-              <input type="text" class="form-control" id="exampleInputAmount" name="searchBox" placeholder="Search Catalog">
-            </div>
-            <div class="col-md-2">
-                    <button type="submit" class="btn btn-primary">Search</button>
-             </div>
-           </form>
-          </div>
-          <div class="col-md-3" ></div>
+    <!--Selection BAR -->
+    <div class="col-md-3">
+        <p class="lead">Type</p>
+        <div class="list-group">
+            <a class="list-group-item">MEN'S</a>
+            <a class="list-group-item">LADIES'</a>
+            <a class="list-group-item">KIDS'</a>
         </div>
-
-        <div class="row pretty_row">
-          <div class="col-xs-3 col-md-3"></div>
-          <div class="col-md-6" >
-            <img src="https://www.welivesecurity.com/wp-content/uploads/2016/04/rayban-scam-facebook.jpg" class="rounded float-left" alt="..." height="100" width="100">
-<img src="http://fashionreverie.com/wp-content/uploads/2014/09/jourdan_dunn.jpg" class="rounded float-left" alt="..." height="100" width="100">
-<img src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/08/02/09/Zoolander-2.jpg" class="rounded float-left" alt="..." height="100" width="100">
-
-            <img src="http://www.shopbenchmark.com/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/a/n/anberlin_flower_girls_boxy_shirt.jpg" class="rounded float-left" alt="..." height="100" width="100">
-            <img src="http://www.slate.com/content/dam/slate/blogs/browbeat/2016/02/18/how_zoolander_2_reflects_the_real_fashion_industry/mugatuedit.jpg.CROP.promo-xlarge2.jpg" class="rounded float-left" alt="..." height="100" width="100">
-
-          </div>
-          <div class="col-md-3"> </div>
+        <p class="lead">Categories</p>
+        <div class="list-group">
+          <a class="list-group-item">T-SHIRT</a>
+          <a class="list-group-item">KNIT</a>
+          <a class="list-group-item">JACKET</a>
         </div>
-
-        <div class="row pretty_row">
-          <div class="col-md-12">
-
-            <div class="jumbotron">
-              <h1>2017 Collection</h1>
-              <p>Spring Fashion</p>
-              <p><a class="btn btn-primary btn-lg" href="https://github.com/akhan118/Coding-Crash-Course" role="button">Download Application</a></p>
-              <p>Last Updated May 13th 2017 </p>
-            </div>
-            <p class="text-center"><a href="url">View All</a></p>
-
-
- </div>
-
-
+        <p class="lead">Size</p>
+        <div class="list-group">
+          <a class="list-group-item">S</a>
+          <a class="list-group-item">M</a>
+          <a class="list-group-item">L</a>
         </div>
 
     </div>
+
+   <!--Items list -->
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-sm-4 col-lg-4 col-md-4" >
+                <div class="thumbnail" >
+                    <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
+                    <div class="caption">
+                        <p>It's a Shirt!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-4 col-md-4" >
+                <div class="thumbnail" >
+                    <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
+                    <div class="caption">
+                        <p>It's a Shirt!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-4 col-md-4" >
+                <div class="thumbnail" >
+                    <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
+                    <div class="caption">
+                        <p>It's a Shirt!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4 col-lg-4 col-md-4" >
+                <div class="thumbnail" >
+                    <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
+                    <div class="caption">
+
+                        <p>It's a Shirt!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
