@@ -3,11 +3,18 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = 'Store Front new';
+$this->title = 'Store Front';
 
 ?>
 
-//Second Commit Attempt on the Command Line!
+<?php
+
+//var_dump($everything);
+
+?>
+
+
+
 
 <div class="row search-row">
   <div class="col-md-7"></div>
@@ -31,7 +38,9 @@ $this->title = 'Store Front new';
     <div class="col-md-3">
         <p class="lead">Type</p>
         <div class="list-group">
-            <a class="list-group-item">MEN'S</a>
+
+          <a  class="list-group-item " href=<?php echo Url::to(['site/findbytype', 'type'=> 1]) ?>>
+            MEN'S</a>
             <a class="list-group-item">LADIES'</a>
             <a class="list-group-item">KIDS'</a>
         </div>
@@ -57,7 +66,11 @@ $this->title = 'Store Front new';
                 <div class="thumbnail" >
                     <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
                     <div class="caption">
-                        <p>It's a Shirt!</p>
+                        <p>
+
+                           <? echo 'Product Name: ' ; echo $everything[0]["ProductName"]; ?>
+
+                        </p>
                     </div>
                 </div>
             </div>

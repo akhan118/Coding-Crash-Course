@@ -83,7 +83,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+
+        $rows = (new \yii\db\Query())
+        ->select('*')
+        ->from('products')
+        ->all();
+      //  echo '<pre>';
+      //  var_dump($rows);
+      //echo  '</pre>';
+
+        return $this->render('index',  [
+              'everything' => $rows,
+             ]  );
+
     }
 
 // cleaned lines 90 through 119
@@ -107,6 +119,36 @@ class SiteController extends Controller
       }
     }
 //
+
+// cleaned lines 90 through 119
+    public function actionFindbytype()
+    {
+      if(YII::$app->request->get())
+      {
+        //  $model = new Product();
+
+        $term =YII::$app->request->get('type');
+        //var_dump($term);
+
+
+        $rows = (new \yii\db\Query())
+    ->select('*')
+    ->from('products')
+    ->where(['like', 'productcategories_CategoryID', $term])
+    ->all();
+
+        return $this->render('searchResults', [
+            'results' => $rows,
+        ]);
+
+
+      }
+    }
+
+
+
+
+
     /**
      * Login action.
      *
