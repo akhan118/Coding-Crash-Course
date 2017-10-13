@@ -93,7 +93,7 @@ class SiteController extends Controller
       //echo  '</pre>';
 
         return $this->render('index',  [
-              'everything' => $rows,
+              'results' => $rows,
              ]  );
 
     }
@@ -108,10 +108,10 @@ class SiteController extends Controller
         $term =YII::$app->request->get('searchBox');
 
         $rows = (new \yii\db\Query())
-    ->select('*')
-    ->from('products')
-    ->where(['like', 'productName', $term])
-    ->all();
+        ->select('*')
+        ->from('products')
+        ->where(['like', 'productName', $term])
+        ->all();
 
         return $this->render('searchResults', [
             'results' => $rows,
@@ -132,12 +132,12 @@ class SiteController extends Controller
 
 
         $rows = (new \yii\db\Query())
-    ->select('*')
-    ->from('products')
-    ->where(['like', 'productcategories_CategoryID', $term])
-    ->all();
+        ->select('*')
+        ->from('products')
+        ->where(['like', 'productcategories_CategoryID', $term])
+        ->all();
 
-        return $this->render('searchResults', [
+        return $this->render('index', [
             'results' => $rows,
         ]);
 
