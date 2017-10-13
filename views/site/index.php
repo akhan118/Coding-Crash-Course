@@ -7,15 +7,6 @@ $this->title = 'Store Front';
 
 ?>
 
-<?php
-
-//var_dump($everything);
-
-?>
-
-
-
-
 <div class="row search-row">
   <div class="col-md-7"></div>
   <div class="col-md-5">
@@ -36,15 +27,19 @@ $this->title = 'Store Front';
 
     <!--Selection BAR -->
     <div class="col-md-3">
-        <p class="lead">Type</p>
+        <p class="lead">Categories</p>
         <div class="list-group">
 
           <a  class="list-group-item " href=<?php echo Url::to(['site/findbytype', 'type'=> 1]) ?>>
             MEN'S</a>
-            <a class="list-group-item">LADIES'</a>
-            <a class="list-group-item">KIDS'</a>
+          <a  class="list-group-item " href=<?php echo Url::to(['site/findbytype', 'type'=> 2]) ?>>
+            LADIES'</a>
+        <a  class="list-group-item " href=<?php echo Url::to(['site/findbytype', 'type'=> 3]) ?>>
+          KIDS'</a>
+          <a  class="list-group-item " href=<?php echo Url::to(['site/index']) ?>>
+            ALL</a>
         </div>
-        <p class="lead">Categories</p>
+        <p class="lead">Type</p>
         <div class="list-group">
           <a class="list-group-item">T-SHIRT</a>
           <a class="list-group-item">KNIT</a>
@@ -59,50 +54,56 @@ $this->title = 'Store Front';
 
     </div>
 
-   <!--Items list -->
-    <div class="col-md-9">
-        <div class="row">
-            <div class="col-sm-4 col-lg-4 col-md-4" >
-                <div class="thumbnail" >
-                    <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
-                    <div class="caption">
-                        <p>
+      <div class="col-md-9">
 
-                           <? echo 'Product Name: ' ; echo $everything[0]["ProductName"]; ?>
+      <?
 
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-lg-4 col-md-4" >
-                <div class="thumbnail" >
-                    <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
-                    <div class="caption">
-                        <p>It's a Shirt!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 col-lg-4 col-md-4" >
-                <div class="thumbnail" >
-                    <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
-                    <div class="caption">
-                        <p>It's a Shirt!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      if ($results) {
 
-        <div class="row">
-            <div class="col-sm-4 col-lg-4 col-md-4" >
-                <div class="thumbnail" >
-                    <img src="https://bape.com/test/mania/images/product/002TED801087_NVY_A_M.jpg" alt="">
-                    <div class="caption">
+        for($i=0; $i < count($results); $i++)
+        {
+        //  var_dump($results[$i]);
 
-                        <p>It's a Shirt!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      ?>
 
+        <?
+          if ( $i == 0) {
+        ?>
+          <div class="row">
+        <?
+            }
+        ?>
+
+          <!-- "Follow the White Rabbit" -Alice in Wonderland -->
+          <a href=<?php echo Url::to(['products/product/'.$results[$i]["ProductID"]]) ?>>
+
+          <div class="col-sm-4 col-lg-4 col-md-4" >
+              <div class="thumbnail" >
+                  <img src="<? echo $results[$i]["ProductThumb"];?>" alt="">
+                  <div class="caption">
+                    <h5>  <?  echo $results[$i]["ProductName"]; ?>  </h5>
+                  </div>
+              </div>
+          </div>
+        </a>
+
+        <?
+          if (  ($i+1)  == count($results)) {
+        ?>
+          </div>
+        <?
+      } elseif(($i+1) % 3 == 0) {
+        ?>
+          </div>
+          <div class="row">
+        <?
+        }
+        ?>
+
+      <?
+        }
+      }
+       ?>
+
+     </div>
 </div>
