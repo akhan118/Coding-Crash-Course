@@ -109,6 +109,8 @@ class ProductsController extends Controller
             //   $model->productcategories_CategoryID = 1;
             //   $model->save();
 
+          //  var_dump(Yii::$app->request->post('CreateProductForm'));
+
 $model->attributes = Yii::$app->request->post('CreateProductForm');
 if ($model->validate()&& $model->save()) {
      return $this->redirect(['view', 'id' => $model->ProductID]);
